@@ -1,10 +1,17 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"],
 })
 export class AppComponent {
-  title = 'todo-app';
+  public title = "todo-app";
+  public taskName: string;
+  public taskList: string[] = [];
+
+  public onClick(): void {
+    this.taskList.push(this.taskName);
+    this.taskName = "";
+  }
 }

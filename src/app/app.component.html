@@ -1,6 +1,17 @@
 <div class="app-container">
   <div class="todo-box">
     <todo-header></todo-header>
-    <task-list></task-list>
+
+    <div>
+      <input
+        [(ngModel)]="taskName"
+        type="text"
+      >
+      <button (click)="onClick()">
+        <i class="fas fa-plus"></i>
+      </button>
+    </div>
+
+    <task-list [taskList]="taskList"></task-list>
   </div>
 </div>

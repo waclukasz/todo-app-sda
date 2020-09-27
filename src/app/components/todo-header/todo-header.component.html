@@ -5,13 +5,15 @@
   <div class="todo-header-content">
     <h2 class="todo-header-head">{{ todoHeader }}</h2>
     <div class="todo-header-counter-box">
-      <p class="todo-counter">24</p>
+      <p class="todo-counter">{{ personalTaskCouter }}</p>
       <p class="todo-counter-discription">personal</p>
     </div>
     <div class="todo-header-counter-box">
-      <p class="todo-counter">12</p>
+      <p class="todo-counter">{{ businessTaskCounter }}</p>
       <p class="todo-counter-discription">business</p>
     </div>
   </div>
-  <div class="todo-header-info"></div>
+  <div class="todo-header-info">
+    <p>{{ getDate() }}</p>
+  </div>
 </header>

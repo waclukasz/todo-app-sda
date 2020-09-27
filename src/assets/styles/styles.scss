@@ -131,18 +131,20 @@ table {
 .app-container {
   display: flex;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 60px 0;
   background: linear-gradient(to bottom, #d6e4f0, #abc7dd);
 }
 .todo-box {
-  margin-top: 100px;
   width: 500px;
-  height: 70vh;
   background-color: #ffffff;
   box-shadow: 0px 10px 30px 3px #0c3c83c4;
 }
 
 .todo-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 200px;
   background-image: url("../images/bg-img.jpg");
   background-position: center;
@@ -157,9 +159,39 @@ table {
 .todo-header-content {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   color: #fff;
 }
 
 .todo-header-head {
   font-size: 38px;
+}
+
+.todo-header-counter-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.todo-counter,
+.todo-counter-discription {
+  font-weight: 300;
+}
+
+.todo-counter {
+  font-size: 28px;
+}
+
+.todo-header-info {
+  color: #fff;
+}
+
+.todo-list-box {
+  height: 300px;
+  padding: 20px;
+}
+
+.todo-list-header {
+  font-weight: 300;
+  color: gray;
 }

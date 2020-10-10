@@ -1,6 +1,11 @@
 * {
-  box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+}
+
+@mixin square($size) {
+	width: $size;
+	height: $size;
 }
 
 html,
@@ -84,12 +89,12 @@ time,
 mark,
 audio,
 video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -103,95 +108,188 @@ hgroup,
 menu,
 nav,
 section {
-  display: block;
+	display: block;
 }
 body {
-  line-height: 1;
+	line-height: 1;
 }
 ol,
 ul {
-  list-style: none;
+	list-style: none;
 }
 blockquote,
 q {
-  quotes: none;
+	quotes: none;
 }
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
-  content: none;
+	content: '';
+	content: none;
 }
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 .app-container {
-  display: flex;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 60px 0;
-  background: linear-gradient(to bottom, #d6e4f0, #abc7dd);
+	display: flex;
+	justify-content: center;
+	min-height: 100vh;
+	padding: 60px 0;
+	background: linear-gradient(to bottom, #d6e4f0, #abc7dd);
 }
 .todo-box {
-  width: 500px;
-  background-color: #ffffff;
-  box-shadow: 0px 10px 30px 3px #0c3c83c4;
+	width: 500px;
+	background-color: #ffffff;
+	box-shadow: 0px 10px 30px 3px #0c3c83c4;
 }
 
 .todo-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 200px;
-  background-image: url("../images/bg-img.jpg");
-  background-position: center;
-  padding: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 200px;
+	background-image: url('../images/bg-img.jpg');
+	background-position: center;
+	padding: 20px;
 }
 
 .todo-header-icon {
-  color: #fff;
-  font-size: 20px;
+	color: #fff;
+	font-size: 20px;
 }
 
 .todo-header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #fff;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: #fff;
 }
 
 .todo-header-head {
-  font-size: 38px;
+	font-size: 38px;
 }
 
 .todo-header-counter-box {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
 }
 
 .todo-counter,
 .todo-counter-discription {
-  font-weight: 300;
+	font-weight: 300;
 }
 
 .todo-counter {
-  font-size: 28px;
+	font-size: 28px;
 }
 
 .todo-header-info {
-  color: #fff;
+	color: #fff;
 }
 
 .todo-list-box {
-  height: 300px;
-  padding: 20px;
+	height: 300px;
+	padding: 20px;
+}
+
+.task-list-container {
+	display: flex;
+	flex-direction: column-reverse;
 }
 
 .todo-list-header {
-  font-weight: 300;
-  color: gray;
+	font-weight: 300;
+	color: gray;
+}
+
+.task-input-container {
+	display: flex;
+	padding: 20px;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.task-input {
+	width: 80%;
+	height: 26px;
+	border: 0;
+	border-bottom: 1px solid grey;
+	margin-right: 10px;
+	font-size: 18px;
+	font-weight: 300;
+
+	&:focus {
+		outline: 0;
+	}
+
+	&::placeholder {
+		color: lightgray;
+	}
+}
+
+.add-task-btn {
+	@include square(50px);
+	border-radius: 100%;
+	background-color: #d6e4f0;
+	border: 0;
+	box-shadow: 0px 7px 13px 0px #a9c2d8;
+	cursor: pointer;
+
+	&:focus {
+		outline: 0;
+	}
+}
+
+.add-task-btn-icon {
+	color: #ffffff;
+}
+
+.todo-list-item {
+	display: flex;
+	justify-content: space-between;
+	padding: 12px 0;
+	border-bottom: 1px solid lightgrey;
+
+	&.complete {
+		.todo-list-item-name {
+			color: lightgray;
+		}
+
+		.todo-list-item-btn-content {
+			color: grey;
+		}
+	}
+}
+
+// .todo-list-item.complete .todo-list-item-name {
+
+// }
+
+.todo-list-item-name {
+	font: 18px;
+	font-weight: 300;
+}
+
+.todo-list-item-timestamp {
+	font-size: 14px;
+	font-weight: 300;
+	color: lightgrey;
+}
+
+.todo-list-item-btn-content {
+	background: transparent;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	font-size: 22px;
+	color: greenyellow;
+	cursor: pointer;
+
+	&:focus {
+		outline: 0;
+	}
 }

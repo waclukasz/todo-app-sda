@@ -2,13 +2,18 @@
   <div class="todo-box">
     <todo-header></todo-header>
 
-    <div>
+    <div class="task-input-container">
       <input
-        [(ngModel)]="taskName"
+        [(ngModel)]="task"
         type="text"
+        class="task-input"
+        [placeholder]="inputPlaceholder"
       >
-      <button (click)="onClick()">
-        <i class="fas fa-plus"></i>
+      <button
+        (click)="onClick()"
+        class="add-task-btn"
+      >
+        <i class="fas fa-plus add-task-btn-icon"></i>
       </button>
     </div>
 

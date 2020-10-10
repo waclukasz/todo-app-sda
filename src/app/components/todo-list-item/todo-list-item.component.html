@@ -1,1 +1,22 @@
-<p>{{ task }}</p>
+<div
+  class="todo-list-item"
+  [class.complete]="task.complete"
+>
+  <div class="todo-list-item-btn">
+    <button
+      (click)="toggleTask()"
+      class="todo-list-item-btn-content"
+    >
+      <i
+        *ngIf="!task.complete; else undoIcon"
+        class="far fa-check-circle"
+      >
+      </i>
+      <ng-template #undoIcon>
+        <i class="far fa-times-circle"></i>
+      </ng-template>
+    </button>
+  </div>
+  <p class="todo-list-item-name">{{ task.name }}</p>
+  <p class="todo-list-item-timestamp">{{ task.timestamp }}</p>
+</div>

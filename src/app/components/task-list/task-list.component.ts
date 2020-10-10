@@ -1,9 +1,16 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+import { Task } from 'src/app/models';
 
 @Component({
-  selector: "task-list",
-  templateUrl: "task-list.component.html",
+	selector: 'task-list',
+	templateUrl: 'task-list.component.html',
 })
-export class TaskListComponent {
-  @Input() public taskList: string[];
+export class TaskListComponent implements OnInit {
+	@Input() public taskList: Task[]
+	public reverseTasklist: Task[]
+
+	public ngOnInit(): void {
+		this.reverseTasklist = this.taskList.reverse()
+	}
 }
